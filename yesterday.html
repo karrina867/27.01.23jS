@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+      /*  let obj = {
+            name:'Alex',
+            age:20
+        }
+
+        Object.defineProperty(obj, 'name',{
+            value:'Alex',
+            enumerable:false,
+        })
+
+        for(let key in obj){
+              console.log(key, obj[key]);
+        }
+
+        for(let key in obj){
+            Object.defineProperty(obj, key, {
+                writable: false,
+            })
+        }*/
+
+      /*  let person = Object.create({},{
+            name:{
+                value:"Alex",
+                writable: true,//можно изменять значение или нет
+                configurable: false,//можно ли удалять значение
+                enumerable:true,//отображать ли ключи
+
+            },
+            age:{
+                value:20,
+            },
+        });
+
+        for(let key in person){
+              console.log(key, person[key]);
+        }
+      */
+     /*
+        function Person(namePerson, agePerson){
+            this.name = namePerson;
+            this.age = agePerson1;
+            this.birthday = agePerson
+            this.human = 'человек';
+
+        Object.defineProperty(this,{
+                newAge :{
+                 get(){
+                console.log('age:', new Date().getFullYear() - this.birthday); 
+            },
+            set(value){
+                this.birthday = value;
+            }
+            }
+        })
+           
+
+        }
+        let person1 = new Person('Alex','23');
+        let person2 = new Person('Kate','14');
+        let person3 = new Person('Mela','15');
+
+        console.log(person1);
+        console.log(person2);
+        console.log(person3);
+
+        //mass.push(new Person('ff',23));
+
+        let user = new Person('Alex',1999);
+        user.age = 34;
+        */
+        
+
+        function First(nameheight, namewidth, namecolor){
+            this.el =document.createElement('div');
+
+            this.width = '200px';
+            this.el.style.width = '200px';
+
+            this.el.classList.add('block');
+            document.body.append(this.el);
+            Object.defineProperty(this,{
+                newAge :{
+                 get(){
+                console.log(this.width)
+            },
+            set(newWidth){
+                this.width = newWidth;
+                this.el.style.width = `${this.newWidth}px`;
+            }
+            }
+        })
+    }
+    let el = new First();
+    </script>
+</body>
+</html>
